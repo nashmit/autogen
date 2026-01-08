@@ -9,20 +9,20 @@ def test_function(in_x):
   return out_y
 
 
-f = ag.trace(test_function, [1., 2.])
-gen = ag.GeneratedCppAD(f)
-
-x = [2.0, 3.0]
-y = f.forward(x)
-print("y = ", y)
-J = f.jacobian(x)
-print("j = ", J)
-
-x = [2.0, 3.0]
-y = gen.forward(x)
-print("y = ", y)
-J = gen.jacobian(x)
-print("j = ", J)
+#f = ag.trace(test_function, [1., 2.])
+#gen = ag.GeneratedCppAD(f)
+#
+#x = [2.0, 3.0]
+#y = f.forward(x)
+#print("y = ", y)
+#J = f.jacobian(x)
+#print("j = ", J)
+#
+#x = [2.0, 3.0]
+#y = gen.forward(x)
+#print("y = ", y)
+#J = gen.jacobian(x)
+#print("j = ", J)
 
 f = ag.trace(test_function, [1., 2.], ag.Mode.CPU)
 gen = ag.GeneratedCodeGen("test_function", f)
