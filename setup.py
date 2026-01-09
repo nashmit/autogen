@@ -30,7 +30,8 @@ ext_modules = [
          # 'CppAD/cppad_lib/cpp_graph_op.cpp'
          ],
         include_dirs=['python/pybind11/include/',
-                      'CppAD/include/', 'CppADCodeGen/include/', 'include/'],
+                      'CppAD/include/', 'CppADCodeGen/include/', 'include/',
+                      'CppADCodeGen/build-release/include/'],
         extra_compile_args=extra_compile_args,
         extra_link_args=extra_link_args,
         define_macros=[('VERSION_INFO', __version__)],

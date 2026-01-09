@@ -1,7 +1,7 @@
 [submodule "CppAD"]
 	path = CppAD
 	url = git@github.com:nashmit/CppAD.git
-	branch = stable/2026
+	branch = stable/2024
 [submodule "CppADCodeGen"]
 	path = CppADCodeGen
 	url = git@github.com:nashmit/CppADCodeGen.git

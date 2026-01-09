@@ -87,14 +87,16 @@ class NvccCompiler : public CppAD::cg::AbstractCCompiler<BaseScalar> {
     args.push_back("/Fo\"" + output + "\"");
 
     std::string out;
-    int return_code =
-        CppAD::cg::system::callExecutable(this->_path, args, &out);
-    if (return_code) {
-      std::cerr << "\nError (" << return_code
-                << ") compiling file '" + path + "' via MSVC:\n" + out
-                << std::endl;
-      throw CppAD::cg::CGException("Error compiling file '" + path +
-                                   "' via MSVC:\n" + out);
+
+    try {
+      CppAD::cg::system::callExecutable(this->_path, args, &out);
+    } catch (...) {
+      std::cerr << "Error while compiling file: " << path +"' via MSVC:\n" + out << std::endl;
+      // std::cerr << "\nError (" << return_code
+      //           << ") compiling file '" + path + "' via MSVC:\n" + out
+      //           << std::endl;
+      // throw CppAD::cg::CGException("Error compiling file '" + path +
+      //                              "' via MSVC:\n" + out);
     }
   }
 };
