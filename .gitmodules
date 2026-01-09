@@ -8,4 +8,5 @@
 	branch = master
 [submodule "python/pybind11"]
 	path = python/pybind11
-	url = https://github.com/RobotLocomotion/pybind11.git
+	url = git@github.com:nashmit/pybind11.git
+	branch = master
