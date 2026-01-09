@@ -1,6 +1,6 @@
 [submodule "CppAD"]
 	path = CppAD
-	url = https://github.com/nashmit/CppAD.git
+	url = git@github.com:nashmit/CppAD.git
 [submodule "CppADCodeGen"]
 	path = CppADCodeGen
 	url = https://github.com/eric-heiden/CppADCodeGen.git
